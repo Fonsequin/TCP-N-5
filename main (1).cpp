@@ -1,0 +1,29 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream> // Solicitar bibloteca
+using namespace std;
+
+int main() // Inicio de la funcion
+{
+    int numero = 1; // Variable del primer numero
+    int suma_total = 1; // Variable de la suma total de los resultados anteriores
+    int numero_anterior; // Variable que guarde los numeros anteriores
+    int cantidad = 0; // Cantidad para el ciclo while
+    cout << "Este programa lee los primeros 15 numeros de la serie fibonacci" << endl; // Presentacion
+    cout << numero << " " << suma_total << " ";
+    while(13 > cantidad) // El ciclo se repetira hasta 13 veces
+    {
+        numero_anterior = suma_total + numero; // La operacion de la serie fibonacci
+        cout << numero_anterior << " "; // Resultado expresado en pantalla
+        numero = suma_total; // El numero pasara a ser el numero del resultado anterior
+        suma_total = numero_anterior; // La suma total pasara a ser el resultado actual
+        cantidad = cantidad + 1; // Para que el ciclo no sea infinito
+    }
+    return 0; // Fin de la funcion
+} // Cierre de la funcion
