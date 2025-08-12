@@ -1,0 +1,40 @@
+#include <iostream> // Solicitar bibloteca
+using namespace std;
+
+int main() // Inicio de la funcion
+{
+   float temperatura; // Variable de la temperatura
+   float suma_total; // Variable de la suma total de temperaturas
+   float promedio; // Variable del promedio de temperaturas
+   float minimo; // Variable de la temperatura mas baja
+   float maximo; // Variable de la temperatura mas alta
+   int cantidad = 0; // Variable de la cantidad de veces que se va a repetir un ciclo
+   cout << "Este programa calcula el promedio de temperatura, la temperatura mas baja y la mas alta en un dia" << endl; // Presentacion
+   cout << "Ingrese la temperatura exterior: "; // Pedirle al usuario que ingrese la temperatura
+   cin >> temperatura; // Dato de la temperatura guardado en variable
+   minimo = temperatura; // Dato de la temperatura minima guardada en variable
+   maximo = temperatura; // Dato de la temperatura maxima guardada en variable
+   suma_total = temperatura; // Dato de la suma total de temperatura guardada en variable
+   while(cantidad < 5)
+   {
+       cout << "Ingrese la temperatura exterior: "; // Pedirle al usuario que ingrese la temperatura
+       cin >> temperatura; // Dato de la temperatura guardado en variable
+       suma_total = temperatura + suma_total; // Calculo para saber la suma total de temperaturas
+       if(maximo < temperatura) // Si la temperatura actual es mayor a la maxima registrada
+       {
+           maximo = temperatura; // La temperatura maxima se actualizara a la actual
+       }
+       else if(temperatura < minimo) // Si la temperatura minima es mas alta que la temperatura actual
+       {
+           minimo = temperatura; // La temperatura minima se actualizara a la actual
+       }
+       cantidad++; // Incremental de cantidad
+   }
+   promedio = suma_total / 6; // Calculo para saber el promedio de temperatura
+   cout << endl; // Separacion
+   cout << "El promedio de temperaturas es de: " << promedio << endl; // Resultado de promedio de temperaturas expresada en pantalla
+   cout << "La temperatura mas baja es de: " << minimo << endl; // Resultado de la temperatura minima expresada en pantalla
+   cout << "La temperatura mas alta es de: " << maximo; // Resultado de la temperatura maxima expresada en pantalla
+   return 0; // Fin de la funcion
+} // Cierre de la funcion
+
