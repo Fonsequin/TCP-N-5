@@ -1,0 +1,195 @@
+#include <iostream> // Solicitar biblioteca
+using namespace std;
+
+int main() // Inicio de la funcion
+{
+    int operacion; // Variable para la opcion elegida
+    cout << "Este programa te deja usar los programas de puntos anteriores" << endl; // Presentacion
+    cout << "1. Promedio de temperaturas" << endl; // Opcion numero 1
+    cout << "2. Serie Fibonacci" << endl; // Opcion numero 2
+    cout << "3. Cantidad de aprobados en los examenes" << endl; // Opcion numero 3
+    cout << "4. Salarios de los empleados;" << endl; // Opcion numero 4
+    cout << "5. Indicar que lista es mayor o si son iguales" << endl; // Opcion numero 5
+    cout << "Ahora ingrese el programa que desea usar: "; // Pedirle al usuario la opcion que escojera
+    cin >> operacion; // Dato guardado de la opcion elegida en variable
+    cout << endl; // Separacion
+    switch(operacion) // Escoje uno de los programas dependiendo de lo que haya puesto el usuario
+    {
+        case 1:
+            float temperatura; // Variable de la temperatura
+            float suma_total; // Variable de la suma total de temperaturas
+            float promedio; // Variable del promedio de temperaturas
+            float minimo; // Variable de la temperatura mas baja
+            float maximo; // Variable de la temperatura mas alta
+            int cantidad = 0; // Variable de la cantidad de veces que se va a repetir un ciclo
+            cout << "Este programa calcula el promedio de temperatura, la temperatura mas baja y la mas alta en un dia" << endl; // Presentacion
+            cout << "Ingrese la temperatura exterior: "; // Pedirle al usuario que ingrese la temperatura
+            cin >> temperatura; // Dato de la temperatura guardado en variable
+            minimo = temperatura; // Dato de la temperatura minima guardada en variable
+            maximo = temperatura; // Dato de la temperatura maxima guardada en variable
+            suma_total = temperatura; // Dato de la suma total de temperatura guardada en variable
+            while(cantidad < 5)
+            {
+                cout << "Ingrese la temperatura exterior: "; // Pedirle al usuario que ingrese la temperatura
+                cin >> temperatura; // Dato de la temperatura guardado en variable
+                suma_total = temperatura + suma_total; // Calculo para saber la suma total de temperaturas
+                if(maximo < temperatura) // Si la temperatura actual es mayor a la maxima registrada
+                {
+                    maximo = temperatura; // La temperatura maxima se actualizara a la actual
+                   }
+                   else if(temperatura < minimo) // Si la temperatura minima es mas alta que la temperatura actual
+                   {
+                       minimo = temperatura; // La temperatura minima se actualizara a la actual
+                   }
+                   cantidad++; // Incremental de cantidad
+               }
+            promedio = suma_total / 6; // Calculo para saber el promedio de temperatura
+            cout << endl; // Separacion
+            cout << "El promedio de temperaturas es de: " << promedio << endl; // Resultado de promedio de temperaturas expresada en pantalla
+            cout << "La temperatura mas baja es de: " << minimo << endl; // Resultado de la temperatura minima expresada en pantalla
+            cout << "La temperatura mas alta es de: " << maximo; // Resultado de la temperatura maxima expresada en pantalla
+            break;
+        case 2:
+            int numero1 = 1; // Variable del primer numero
+            int suma_total1 = 1; // Variable de la suma total de los resultados anteriores
+            int numero_anterior1; // Variable que guarde los numeros anteriores
+            int cantidad1 = 0; // Cantidad para el ciclo while
+            cout << "Este programa escribe la serie fibonacci" << endl; // Presentacion
+            cout << "Ingrese la cantidad de numeros que quiera de la serie fibonacci: "; // Pedirle al usuario que ingrese la cantidad de valores fibonacci
+            cin >> cantidad1; // Dato guardado de la cantidad en variable
+            cantidad1 = cantidad1 - 2;
+            cout << numero1 << " " << suma_total1 << " ";
+            while(13 > cantidad1) // El ciclo se repetira hasta 13 veces
+            {
+                numero_anterior1 = suma_total1 + numero1; // La operacion de la serie fibonacci
+                cout << numero_anterior1 << " "; // Resultado expresado en pantalla
+                numero1 = suma_total1; // El numero pasara a ser el numero del resultado anterior
+                suma_total1 = numero_anterior1; // La suma total pasara a ser el resultado actual
+                cantidad1 = cantidad1 + 1; // Para que el ciclo no sea infinito
+            }
+            break;
+        
+        case 3:
+        	float nota4; // Variable para guardar la nota
+        	float nota5; // Variable para guardar la nota
+        	float nota6; // Variable para guardar la nota
+        	int estudiantes3 = 1; // Variable de estudiantes
+        	int alumnos_aprobadisimos = 0; // Variable para ver si un alumno aprobo todos los examenes
+        	int alumnos_intermedios = 0; // Variable para ver si un alumno aprobo algun examen
+        	int alumnos_no_tan_aprobadisimos = 0; // Variable para guardar si un alumno aprobo solo el ultimo examen
+        	int numero3 = 1; // Variable para guardar el numero de estudiante
+        	cout << "Este programa determina cuantos alumnos aprobaron dependiendo su notas y cual examen es" << endl; // Presentacion
+        	while(estudiantes3 <= 5) // Este ciclo se repetira mientras la variable estudiantes sea menor a 5
+        	{
+        		cout << "Estudiante numero " << numero3 << endl; // Presentacion
+        		cout << endl; // Separacion
+        		cout << "Ingrese su primer nota del examen: "; // Pedirle al usuario la nota del estudiante del examen
+        		cin >> nota4; // Dato de la nota del examen guardado en variable
+        		cout << "Ingrese su segunda nota del examen: "; // Pedirle al usuario la nota del estudiante del examen
+        		cin >> nota5; // Dato de la nota del examen guardado en variable
+        		cout << "Ingrese su tercer nota del examen: "; // Pedirle al usuario la nota del estudiante del examen
+        		cin >> nota6; // Dato de la nota del examen guardado en variable
+        		if(nota4 >= 7 and nota5 >= 7 and nota6 >= 7) // Si las 3 notas son mayores a 7 o directamente si esta aprobado
+        		{
+        		    alumnos_aprobadisimos = alumnos_aprobadisimos + 1; // La variable de alumnos con todos los examenes aprobados sumara 1
+        		}
+        		else if(nota6 >= 7 and nota4 < 7 and nota5 < 7) // Si el tercer esta aprobado pero ni el primero o el segundo lo estan 
+        		{
+        		    alumnos_no_tan_aprobadisimos = alumnos_no_tan_aprobadisimos + 1; // La variable de alumnos con solo el ultimo examen aprobado sumara 1
+        		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+        		}
+        		else if(nota4 >= 7) // Si la nota del primer examen es mayor a 7
+        		{
+        		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+        		}
+        		else if(nota5 >= 7) // Si la nota del segundo examen es mayor a 7
+        		{
+        		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+        		}
+        		else if(nota6 >= 7) // Si la nota del tercer examen es mayor a 7
+        		{
+        		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+        		}
+        		estudiantes3 = estudiantes3 + 1; // Incrementador de la variable estudiantes
+        		numero3 = numero3 + 1; // Incrementador de la variable del numero de estudiante
+        		cout << endl; // Separacion
+        	}
+        	cout << "Hay un total de " << alumnos_aprobadisimos << " estudiantes que aprobaron todos los examen" << endl; // Cantidad de alumnos con todos los examenes aprobados expresado en pantalla
+        	cout << "Hay un total de " << alumnos_intermedios << " estudiantes que aprobaron al menos un examen" << endl; // Cantidad de alumnos con al menos un examen aprobado expresado en pantalla
+        	cout << "Hay un total de " << alumnos_no_tan_aprobadisimos << " estudiantes que aprobaron solo el ultimo examen" << endl; // Cantidad de alumnos con solo el ultimo examen aprobado expresado en pantalla
+        	break;
+    	
+    	case 4:
+            int empleados; // Variable de la cantidad de empleados
+            float sueldos; // Variable de los sueldos
+            float suma_total20; // Variable de la suma total de los sueldos
+            int menos_de_300k = 0; // Variable de la cantidad de empleados que tienen un salario entre 100k y 300k
+            int mas_de_300k = 0; // Variable de la cantidad de empleados que tienen un salario mayor a 300k
+            int menos_de_100k = 0; // Variable de la cantidad de empleados que tienen un salario menor a 100k
+            cout << "Registradora de sueldos de los empleados" << endl; // Presentacion
+            cout << "Ingrese la cantidad de empleados a registrar: "; // Pedirle al usuario que ingrese cuantos salarios va a tener que poner
+            cin >> empleados; // Dato guardado de la cantidad de empleados en variable
+            cout << endl; // Separacion
+            for(int i = 1; i <= empleados; i++) // Este ciclo se repetira las veces que el usuario ingreso en la variable "empleados"
+            {
+                cout << "Ingrese el salario del empleado: "; // Pedirle al usuario que ingrese el salario del empleado
+                cin >> sueldos; // Dato guardado del salario en variable
+                suma_total20 = suma_total20 + sueldos; // Calculo para saber la suma total de salarios
+                if(100000 <= sueldos and sueldos <= 300000) // Si la variable de sueldos tiene un valor mayor que 100k y menor a 300k
+                {
+                    menos_de_300k = menos_de_300k + 1; // A la variable de saber cuantos empleados tienen un salario entre 100k y 300k se le sumara 1
+                }
+                else if(300000 < sueldos) // Si la variable de sueldos tiene un valor mayor a 300k
+                {
+                    mas_de_300k = mas_de_300k + 1; // A la variable de saber cuantos empleados tienen un salario mayor a 300k se le sumara 1
+                }
+                else if(100000 > sueldos) // Si la variable de sueldos tiene un valor menor a 100k
+                {
+                    menos_de_100k = menos_de_100k + 1; // A la variable de saber cuantos empleados tienen un salario menor a 100k se le sumara 1
+                }
+            }
+            cout << "Hay un total de " << menos_de_100k << " empleados que tienen un salario menor a 100k" << endl; // Cuantos empleados con un salario menor a 100k expresado en pantalla
+            cout << "Hay un total de " << menos_de_300k << " empleados que tienen un salario entre 100k y 300k" << endl; // Cuantos empleados con un salario entre 100k y 300k expresado en pantalla
+            cout << "Hay un total de " << mas_de_300k << " empleados que tienen un salario mayor a 300k" << endl; // Cuantos empleados con un salario mayor a 300k expresado en pantalla
+            cout << "La empresa gasta un total de " << suma_total20 << " pesos en los salarios de los empleados" << endl; // Gasto totales de la empresa en salarios expresado en pantalla
+            break;
+        
+        case 5:
+            float numero; // Variable del numero
+            float suma_total_de_la_lista_1 = 0; // Variable de la suma total de los numeros en la primera lista
+            float suma_total_de_la_lista_2 = 0; // Variable de la suma total de los numeros en la segunda lista
+            cout << "Este programa compara 2 listas de 15 valores cada una y dice cual es mayor a la otra" << endl; // Presentacion
+            for(int i = 1; i <= 15; i++) // El ciclo se repetira un total de 15 veces
+            {
+                cout << "Ingrese el numero " << i << " de la primera lista: "; // Pedirle al usuario que ingrese el numero de la lista
+                cin >> numero; // Dato guardado del numero ingresado
+                suma_total_de_la_lista_1 = suma_total_de_la_lista_1 + numero; // Datos guardado en la suma total de la primera lista
+            }
+            cout << endl << "Ahora con la segunda lista:" << endl;
+            for(int j = 1; j <= 15; j++) // El ciclo se repetira un total de 15 veces
+            {
+                cout << "Ingrese el numero " << j << " de la segunda lista: "; // Pedirle al usuario que ingrese el numero de la lista
+                cin >> numero; // Dato guardado del numero ingresado
+                suma_total_de_la_lista_2 = suma_total_de_la_lista_2 + numero; // Datos guardado en la suma total de la segunda lista
+            }
+            cout << endl; // Separacion
+            if(suma_total_de_la_lista_1 == suma_total_de_la_lista_2) // Si la suma total de la primera lista es igual a la suma total de la segunda lista
+            {
+                cout << "Ambas listas son iguales"; // Expresara en pantalla que ambas listas son iguales
+            }
+            if(suma_total_de_la_lista_2 < suma_total_de_la_lista_1) // Si la suma total de la segunda lista es menor a la suma total de la primera lista
+            {
+                cout << "La lista numero 1 es la mayor"; // Expresa en pantalla que la primera lista es mayor
+            }
+            if(suma_total_de_la_lista_1 < suma_total_de_la_lista_2) // Si la suma total de la primera lista es menor a la suma total de la segunda lista
+            {
+                cout << "La lista numero 2 es la mayor"; // Expresara en pantalla que la segunda lista es mayor
+            }
+            break;
+        
+        default: // Si ninguna de las opciones es elegida
+            cout << "Porfavor escoja de las opciones posibles, entre el 1 hasta el 5. El programa se volvera a iniciar..." << endl; // Diciendole al usuario que el programa se volvera a iniciar
+            return main(); // El programa se volvera a iniciar
+    }
+    return 0; // Fin de la funcion
+} // Cierre de la funcion
