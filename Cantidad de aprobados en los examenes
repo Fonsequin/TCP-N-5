@@ -1,0 +1,53 @@
+#include <iostream> // Solicitar bibloteca
+using namespace std;
+int main() // Inicio de la funcion
+{
+	float nota; // Variable para guardar la nota
+	float nota1; // Variable para guardar la nota
+	float nota2; // Variable para guardar la nota
+	int estudiantes = 1; // Variable de estudiantes
+	int alumnos_aprobadisimos = 0; // Variable para ver si un alumno aprobo todos los examenes
+	int alumnos_intermedios = 0; // Variable para ver si un alumno aprobo algun examen
+	int alumnos_no_tan_aprobadisis = 0; // Variable para guardar si un alumno aprobo solo el ultimo examen
+	int numero = 1; // Variable para guardar el numero de estudiante
+	cout << "Este programa determina cuantos alumnos aprobaron dependiendo su notas y cual examen es" << endl; // Presentacion
+	while(estudiantes <= 5) // Este ciclo se repetira mientras la variable estudiantes sea menor a 5
+	{
+		cout << "Estudiante numero " << numero << endl; // Presentacion
+		cout << endl; // Separacion
+		cout << "Ingrese su primer nota del examen: "; // Pedirle al usuario la nota del estudiante del examen
+		cin >> nota; // Dato de la nota del examen guardado en variable
+		cout << "Ingrese su segunda nota del examen: "; // Pedirle al usuario la nota del estudiante del examen
+		cin >> nota1; // Dato de la nota del examen guardado en variable
+		cout << "Ingrese su tercer nota del examen: "; // Pedirle al usuario la nota del estudiante del examen
+		cin >> nota2; // Dato de la nota del examen guardado en variable
+		if(nota >= 7 and nota1 >= 7 and nota2 >= 7) // Si las 3 notas son mayores a 7 o directamente si esta aprobado
+		{
+		    alumnos_aprobadisimos = alumnos_aprobadisimos + 1; // La variable de alumnos con todos los examenes aprobados sumara 1
+		}
+		else if(nota2 >= 7 and nota < 7 and nota1 < 7) // Si el tercer esta aprobado pero ni el primero o el segundo lo estan 
+		{
+		    alumnos_no_tan_aprobadisimos = alumnos_no_tan_aprobadisimos + 1; // La variable de alumnos con solo el ultimo examen aprobado sumara 1
+		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+		}
+		else if(nota >= 7) // Si la nota del primer examen es mayor a 7
+		{
+		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+		}
+		else if(nota1 >= 7) // Si la nota del segundo examen es mayor a 7
+		{
+		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+		}
+		else if(nota2 >= 7) // Si la nota del tercer examen es mayor a 7
+		{
+		    alumnos_intermedios = alumnos_intermedios + 1; // La variable de alumnos que al menos aprobaron un examen sumara 1
+		}
+		estudiantes = estudiantes + 1; // Incrementador de la variable estudiantes
+		numero = numero + 1; // Incrementador de la variable del numero de estudiante
+		cout << endl; // Separacion
+	}
+	cout << "Hay un total de " << alumnos_aprobadisimos << " estudiantes que aprobaron todos los examen" << endl; // Cantidad de alumnos con todos los examenes aprobados expresado en pantalla
+	cout << "Hay un total de " << alumnos_intermedios << " estudiantes que aprobaron al menos un examen" << endl; // Cantidad de alumnos con al menos un examen aprobado expresado en pantalla
+	cout << "Hay un total de " << alumnos_no_tan_aprobadisimos << " estudiantes que aprobaron solo el ultimo examen" << endl; // Cantidad de alumnos con solo el ultimo examen aprobado expresado en pantalla
+	return 0; // Fin de la funcion
+} // Cierre de la funcion
