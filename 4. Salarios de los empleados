@@ -1,0 +1,39 @@
+#include <iostream> // Solicitar biblioteca
+using namespace std;
+
+int main() // Inicio de la funcion
+{ // Arranque de la funcion
+    int empleados; // Variable de la cantidad de empleados
+    float sueldos; // Variable de los sueldos
+    float suma_total; // Variable de la suma total de los sueldos
+    int menos_de_300k = 0; // Variable de la cantidad de empleados que tienen un salario entre 100k y 300k
+    int mas_de_300k = 0; // Variable de la cantidad de empleados que tienen un salario mayor a 300k
+    int menos_de_100k = 0; // Variable de la cantidad de empleados que tienen un salario menor a 100k
+    cout << "Registradora de sueldos de los empleados" << endl; // Presentacion
+    cout << "Ingrese la cantidad de empleados a registrar: "; // Pedirle al usuario que ingrese cuantos salarios va a tener que poner
+    cin >> empleados; // Dato guardado de la cantidad de empleados en variable
+    cout << endl; // Separacion
+    for(int i = 1; i <= empleados; i++) // Este ciclo se repetira las veces que el usuario ingreso en la variable "empleados"
+    {
+        cout << "Ingrese el salario del empleado: "; // Pedirle al usuario que ingrese el salario del empleado
+        cin >> sueldos; // Dato guardado del salario en variable
+        suma_total = suma_total + sueldos; // Calculo para saber la suma total de salarios
+        if(100000 <= sueldos and sueldos <= 300000) // Si la variable de sueldos tiene un valor mayor que 100k y menor a 300k
+        {
+            menos_de_300k = menos_de_300k + 1; // A la variable de saber cuantos empleados tienen un salario entre 100k y 300k se le sumara 1
+        }
+        else if(300000 < sueldos) // Si la variable de sueldos tiene un valor mayor a 300k
+        {
+            mas_de_300k = mas_de_300k + 1; // A la variable de saber cuantos empleados tienen un salario mayor a 300k se le sumara 1
+        }
+        else if(100000 > sueldos) // Si la variable de sueldos tiene un valor menor a 100k
+        {
+            menos_de_100k = menos_de_100k + 1; // A la variable de saber cuantos empleados tienen un salario menor a 100k se le sumara 1
+        }
+    }
+    cout << "Hay un total de " << menos_de_100k << " empleados que tienen un salario menor a 100k" << endl; // Cuantos empleados con un salario menor a 100k expresado en pantalla
+    cout << "Hay un total de " << menos_de_300k << " empleados que tienen un salario entre 100k y 300k" << endl; // Cuantos empleados con un salario entre 100k y 300k expresado en pantalla
+    cout << "Hay un total de " << mas_de_300k << " empleados que tienen un salario mayor a 300k" << endl; // Cuantos empleados con un salario mayor a 300k expresado en pantalla
+    cout << "La empresa gasta un total de " << suma_total << " de plata de salario en los empleados" << endl; // Gasto totales de la empresa en salarios expresado en pantalla
+    return 0; // Fin de la funcion
+} // Cierre de la funcion
