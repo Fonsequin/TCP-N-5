@@ -1,4 +1,4 @@
-#include <iostream> // Solicitar bibloteca
+#include <iostream> // Solicitar biblioteca
 using namespace std;
 
 int main() // Inicio de la funcion
@@ -37,4 +37,5 @@ int main() // Inicio de la funcion
    cout << "La temperatura mas alta es de: " << maximo; // Resultado de la temperatura maxima expresada en pantalla
    return 0; // Fin de la funcion
 } // Cierre de la funcion
+
 
