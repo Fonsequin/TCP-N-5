@@ -1,0 +1,37 @@
+#include <iostream> // Solicitar biblioteca
+using namespace std;
+
+int main() // Inicio de la funcion
+{ // Arranque de la funcion
+    float numero; // Variable del numero
+    float suma_total_de_la_lista_1 = 0; // Variable de la suma total de los numeros en la primera lista
+    float suma_total_de_la_lista_2 = 0; // Variable de la suma total de los numeros en la segunda lista
+    cout << "Este programa compara 2 listas de 15 valores cada una y dice cual es mayor a la otra" << endl; // Presentacion
+    for(int i = 1; i <= 15; i++) // El ciclo se repetira un total de 15 veces
+    {
+        cout << "Ingrese el numero " << i << " de la primera lista: "; // Pedirle al usuario que ingrese el numero de la lista
+        cin >> numero; // Dato guardado del numero ingresado
+        suma_total_de_la_lista_1 = suma_total_de_la_lista_1 + numero; // Datos guardado en la suma total de la primera lista
+    }
+    cout << endl << "Ahora con la segunda lista:" << endl;
+    for(int j = 1; j <= 15; j++) // El ciclo se repetira un total de 15 veces
+    {
+        cout << "Ingrese el numero " << j << " de la segunda lista: "; // Pedirle al usuario que ingrese el numero de la lista
+        cin >> numero; // Dato guardado del numero ingresado
+        suma_total_de_la_lista_2 = suma_total_de_la_lista_2 + numero; // Datos guardado en la suma total de la segunda lista
+    }
+    cout << endl; // Separacion
+    if(suma_total_de_la_lista_1 == suma_total_de_la_lista_2) // Si la suma total de la primera lista es igual a la suma total de la segunda lista
+    {
+        cout << "Ambas listas son iguales"; // Expresara en pantalla que ambas listas son iguales
+    }
+    if(suma_total_de_la_lista_2 < suma_total_de_la_lista_1) // Si la suma total de la segunda lista es menor a la suma total de la primera lista
+    {
+        cout << "La lista numero 1 es la mayor"; // Expresa en pantalla que la primera lista es mayor
+    }
+    if(suma_total_de_la_lista_1 < suma_total_de_la_lista_2) // Si la suma total de la primera lista es menor a la suma total de la segunda lista
+    {
+        cout << "La lista numero 2 es la mayor"; // Expresara en pantalla que la segunda lista es mayor
+    }
+    return 0; // Fin de la funcion
+} // Cierre de la funcion
