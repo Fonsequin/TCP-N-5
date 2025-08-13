@@ -1,4 +1,4 @@
-#include <iostream> // Solicitar bibloteca
+#include <iostream> // Solicitar biblioteca
 using namespace std;
 
 int main() // Inicio de la funcion
