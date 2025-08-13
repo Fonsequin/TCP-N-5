@@ -7,7 +7,10 @@ int main() // Inicio de la funcion
     int suma_total = 1; // Variable de la suma total de los resultados anteriores
     int numero_anterior; // Variable que guarde los numeros anteriores
     int cantidad = 0; // Cantidad para el ciclo while
-    cout << "Este programa lee los primeros 15 numeros de la serie fibonacci" << endl; // Presentacion
+    cout << "Este programa escribe la serie fibonacci" << endl; // Presentacion
+    cout << "Ingrese la cantidad de numeros que quiera de la serie fibonacci: "; // Pedirle al usuario que ingrese la cantidad de valores fibonacci
+    cin >> cantidad2; // Dato guardado de la cantidad en variable
+    cantidad2 = cantidad2 - 2;
     cout << numero << " " << suma_total << " ";
     while(13 > cantidad) // El ciclo se repetira hasta 13 veces
     {
