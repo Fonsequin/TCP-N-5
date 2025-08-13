@@ -34,6 +34,6 @@ int main() // Inicio de la funcion
     cout << "Hay un total de " << menos_de_100k << " empleados que tienen un salario menor a 100k" << endl; // Cuantos empleados con un salario menor a 100k expresado en pantalla
     cout << "Hay un total de " << menos_de_300k << " empleados que tienen un salario entre 100k y 300k" << endl; // Cuantos empleados con un salario entre 100k y 300k expresado en pantalla
     cout << "Hay un total de " << mas_de_300k << " empleados que tienen un salario mayor a 300k" << endl; // Cuantos empleados con un salario mayor a 300k expresado en pantalla
-    cout << "La empresa gasta un total de " << suma_total << " de plata de salario en los empleados" << endl; // Gasto totales de la empresa en salarios expresado en pantalla
+    cout << "La empresa gasta un total de " << suma_total << " pesos en los salarios de los empleados" << endl; // Gasto totales de la empresa en salarios expresado en pantalla
     return 0; // Fin de la funcion
 } // Cierre de la funcion
